@@ -37,7 +37,9 @@
             // update name
             $conn = Connection::getInstance();
             $query = $conn->prepare("update categories set name=:var_name, parent_id=:var_parent_id where id=$id");
-            $query->execute(array("var_name"=>$name, "parent_id"=>$parent_id));
+            $query->execute(array("var_name"=>$name, "var_parent_id"=>$parent_id));
+
+
             // neu password khong rong thi update password
             // if($password != ""){
             //     // ma hoa password

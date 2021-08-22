@@ -52,11 +52,11 @@
                 if ($oldPhoto->rowCount() > 0){
                     $record = $oldPhoto->fetch();
 //                xoa anh
-                    if ($record->photo != ""&&file_exists("../assets/upload/products/".$record->photo))
-                        unlink("../assets/upload/products/".$record->photo);
+                    if ($record->photo != ""&&file_exists("assets/upload/products/".$record->photo))
+                        unlink("assets/upload/products/".$record->photo);
                 }
                 $photo = time()."_".$_FILES["photo"]["name"];
-                move_uploaded_file($_FILES["photo"]["tmp_name"],"../assets/upload/products/$photo");
+                move_uploaded_file($_FILES["photo"]["tmp_name"],"assets/upload/products/$photo");
                 $query = $conn->prepare("update products set photo=:var_photo where id=$id");
                 $query->execute(array("var_photo"=>$photo));
             }
@@ -73,7 +73,7 @@
             $photo = "";
             if ($_FILES["photo"]["name"] != ""){
                 $photo = time()."_".$_FILES["photo"]["name"];
-                move_uploaded_file($_FILES["photo"]["tmp_name"],"../assets/upload/products/$photo");
+                move_uploaded_file($_FILES["photo"]["tmp_name"],"assets/upload/products/$photo");
             }
             $conn = Connection::getInstance();
             $query = $conn->prepare("insert products set name=:var_name, category_id=:var_category_id, 
@@ -90,8 +90,8 @@
             if ($oldPhoto->rowCount() > 0){
                 $record = $oldPhoto->fetch();
 //                xoa anh
-                if ($record->photo != ""&&file_exists("../assets/upload/products/".$record->photo))
-                    unlink("../assets/upload/products/".$record->photo);
+                if ($record->photo != ""&&file_exists("assets/upload/products/".$record->photo))
+                    unlink("assets/upload/products/".$record->photo);
             }
             $conn->query("delete from products where id=$id");
         }
