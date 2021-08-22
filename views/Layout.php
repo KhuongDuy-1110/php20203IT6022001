@@ -29,7 +29,7 @@
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>LT</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>LTE</span>
+            <span class="logo-lg"><b>Admin</b> - phoxinh</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -102,7 +102,7 @@
 
                 <li>
                     <a href="index.php?controller=orders">
-                        <i class="fa fa-code"></i> <span>Đơn hàng</span>
+                        <i class="fa fa-th"></i> <span>Danh sách đơn hàng</span>
             </span>
                     </a>
                 </li>
@@ -142,10 +142,9 @@
     </div>
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 2.4.13-pre
+            <b>Nhom</b> 15
         </div>
-        <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-        reserved.
+        <strong>Made by <a href="#">Nhom 15</a>.</strong>
     </footer>
     <div class="control-sidebar-bg"></div>
 </div>
