@@ -107,14 +107,14 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-code"></i> <span>xyz</span>
+                    <a href="index.php?controller=inventory">
+                        <i class="fa fa-code"></i> <span>Quản lý hàng tồn</span>
                         </span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-code"></i> <span>abc</span>
+                    <a href="index.php?controller=spend">
+                        <i class="fa fa-code"></i> <span>Quản lý chi tiêu</span>
             </span>
                     </a>
                 </li>
