@@ -106,14 +106,24 @@
                     </a>
                 </li>
                 <li>
+<<<<<<< HEAD
                     <a href="index.php?controller=customers">
                         <i class="fa fa-code"></i> <span>Khách hàng</span>
+=======
+                    <a href="index.php?controller=inventory">
+                        <i class="fa fa-code"></i> <span>Quản lý hàng tồn</span>
+>>>>>>> 2c3e186b7ce7efbf9b0ee904dc41aa3dae63d395
                         </span>
                     </a>
                 </li>
                 <li>
+<<<<<<< HEAD
                     <a href="index.php?controller=reportRevenues">
                         <i class="fa fa-code"></i> <span>Báo cáo khoản thu</span>
+=======
+                    <a href="index.php?controller=spend">
+                        <i class="fa fa-code"></i> <span>Quản lý chi tiêu</span>
+>>>>>>> 2c3e186b7ce7efbf9b0ee904dc41aa3dae63d395
             </span>
                     </a>
                 </li>
