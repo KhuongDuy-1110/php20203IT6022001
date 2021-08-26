@@ -99,31 +99,32 @@
                         <i class="fa fa-th"></i> <span>Sản phẩm</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="index.php?controller=orders">
                         <i class="fa fa-th"></i> <span>Danh sách đơn hàng</span>
                     </a>
                 </li>
+                
                 <li>
-<<<<<<< HEAD
-                    <a href="index.php?controller=customers">
-                        <i class="fa fa-code"></i> <span>Khách hàng</span>
-=======
                     <a href="index.php?controller=inventory">
-                        <i class="fa fa-code"></i> <span>Quản lý hàng tồn</span>
->>>>>>> 2c3e186b7ce7efbf9b0ee904dc41aa3dae63d395
-                        </span>
+                        <i class="fa fa-code"></i> <span>Quản lý hàng tồn</span></span>
                     </a>
                 </li>
                 <li>
-<<<<<<< HEAD
+                    <a href="index.php?controller=customers">
+                        <i class="fa fa-code"></i> <span>Khách hàng</span>
+                    </a>
+                </li>
+                <li>
                     <a href="index.php?controller=reportRevenues">
                         <i class="fa fa-code"></i> <span>Báo cáo khoản thu</span>
-=======
+                    </a>
+                </li>
+                <li>
                     <a href="index.php?controller=spend">
                         <i class="fa fa-code"></i> <span>Quản lý chi tiêu</span>
->>>>>>> 2c3e186b7ce7efbf9b0ee904dc41aa3dae63d395
+                    </a>
+                </li>
             </span>
                     </a>
                 </li>
