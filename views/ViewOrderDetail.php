@@ -58,8 +58,12 @@
                         $product = $this->modelGetProducts($rows->product_id);
                      ?>
                 <tr>
-                    <td style="text-align: center;"><img src="../Assets/Upload/Products/<?php echo $product->photo; ?>" style="width:100px;"></td>
-                    <td><?php echo $product->name; ?></td>
+                    <td style="text-align: center;"><img src="Assets/Upload/Products/<?php echo $product->photo; ?>" style="width:100px;"></td>
+                    <td>
+                        <?php echo $product->name; ?>
+<!--                        --><?php //var_dump($product); ?>
+
+                    </td>
                     <td style="text-align: center;"><?php echo number_format($rows->price); ?></td>
                     <td style="text-align: center;"><?php echo $rows->quantity; ?></td>
                 </tr>
