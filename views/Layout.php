@@ -103,18 +103,17 @@
                 <li>
                     <a href="index.php?controller=orders">
                         <i class="fa fa-th"></i> <span>Danh sách đơn hàng</span>
-            </span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-code"></i> <span>xyz</span>
+                    <a href="index.php?controller=customers">
+                        <i class="fa fa-code"></i> <span>Khách hàng</span>
                         </span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-code"></i> <span>abc</span>
+                    <a href="index.php?controller=reportRevenues">
+                        <i class="fa fa-code"></i> <span>Báo cáo khoản thu</span>
             </span>
                     </a>
                 </li>
