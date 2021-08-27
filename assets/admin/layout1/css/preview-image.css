@@ -1,0 +1,32 @@
+#preview{
+	margin: auto;
+	position: fixed;
+	z-index: 2039;
+	height: 50px;
+	width: 100px;
+	display: none;
+	padding-left: 400px;
+}
+
+.main-preview{
+	background-color: white;
+	position: relative;
+}
+
+.go-back {
+	color: #222;
+	width: 0;
+	height: 0;
+	margin-left: 320px;
+}
+
+.go-back:hover{
+	opacity: 0.5;
+}
+
+.go-back i{
+	position: relative;
+	top: -13px;
+	left: 18px;
+	color: red;
+}

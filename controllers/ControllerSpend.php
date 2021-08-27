@@ -14,6 +14,15 @@
             // goi view, truyen du lieu ra view
             $this->loadView("ViewSpend.php",array("data"=>$data,"numPage"=>$numPage));
         }
+        public function search(){
+            $key = $_POST["key"];
+            $recordPerPage = 40;
+            // tinh so trang
+            $numPage = ceil($this->modelTotalRecordSearch($key)/$recordPerPage);
+            $data = $this->modelSearch($recordPerPage,$key);
+            // quy dinh so ban ghi tren mot trang
+            $this->loadView("ViewSpend.php",array("data"=>$data,"numPage"=>$numPage));
+        }
         public function update(){
             $id = isset($_GET["id"])&&$_GET["id"] > 0 ? $_GET["id"] : 0;
             // lay mot ban ghi 

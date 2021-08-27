@@ -19,6 +19,7 @@
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <!-- load file .js cua ckeditor -->
     <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="assets/admin/layout1/css/preview-image.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -168,5 +169,6 @@
 <script src="assets/admin/layout1/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="assets/admin/layout1/js/adminlte.min.js"></script>
+<script type="text/javascript" src="assets/admin/layout1/js/preview-image.js"></script>
 </body>
 </html>
