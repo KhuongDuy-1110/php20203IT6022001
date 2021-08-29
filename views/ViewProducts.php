@@ -11,19 +11,19 @@
         <div class="panel-body">
             <table class="table table-bordered table-hover">
                 <tr>
-                    <th style="width: 100px;">Photo</th>
+                    <th style="width: 100px;" >Photo</th>
                     <th>name</th>
-                    <th style="width: 100px;">Danh mục</th>
-                    <th style="width: 70px;">Discount</th>
+                    <th style="width: 200px;" >Danh mục</th>
+                    <th style="width: 70px;" >Discount</th>
                     <th style="width: 50px;">Hot</th>
                     <!-- <th>Email</th> -->
-                    <th style="width:100px;"></th>
+                    <th style="width: 100px;"></th>
                 </tr>
                 <?php foreach($data as $rows):?>
                 <tr>
                     <td>
                         <?php if ($rows->photo!="" && file_exists("assets/upload/products/".$rows->photo)): ?>
-                        <img src="assets/upload/products/<?php echo $rows->photo;?>" style="width=100px;">
+                        <img src="assets/upload/products/<?php echo $rows->photo;?>" style="width: 100px;">
                         <?php endif; ?>
                     </td>
                     <td><?php echo $rows->name; ?></td>
