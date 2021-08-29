@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 20, 2021 lúc 04:41 PM
--- Phiên bản máy phục vụ: 10.4.14-MariaDB
--- Phiên bản PHP: 7.4.11
+-- Thời gian đã tạo: Th8 29, 2021 lúc 03:53 AM
+-- Phiên bản máy phục vụ: 10.4.11-MariaDB
+-- Phiên bản PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,6 +48,33 @@ INSERT INTO `categories` (`id`, `parent_id`, `name`, `displayhomepage`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `inventory`
+--
+
+CREATE TABLE `inventory` (
+  `id` int(11) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `time_in` date NOT NULL,
+  `estimate_out` date NOT NULL,
+  `expired_at` date NOT NULL,
+  `sku` varchar(255) NOT NULL,
+  `stock` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `inventory`
+--
+
+INSERT INTO `inventory` (`id`, `image`, `name`, `category_id`, `time_in`, `estimate_out`, `expired_at`, `sku`, `stock`) VALUES
+(4, '1630030317_Screenshot (14).png', 'protect 1', 5, '2021-08-28', '2021-08-28', '2021-08-29', 'aaaaa333', 11112),
+(5, '1630032308_Screenshot (14).png', 'protect 1', 4, '2021-08-28', '2021-08-28', '2021-08-28', '100000', 10000),
+(6, '1630032341_Screenshot (12).png', 'protect 4', 2, '2021-08-19', '2021-08-21', '2021-09-02', 'ádsd', 111);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `products`
 --
 
@@ -75,6 +102,30 @@ INSERT INTO `products` (`id`, `name`, `description`, `content`, `hot`, `photo`, 
 (8, '6 - MacBook Pro 16 Touch Bar 2.6GHz Core i7/16GB/', '<p>Khắc phục hậu quả của đại dịch Covid-19, một s&aacute;ng kiến được đưa ra giữa c&aacute;c nước ASEAN l&agrave; tổ chức &ldquo;du lịch cầu h&agrave;ng kh&ocirc;ng&rdquo; giữa &ldquo;c&aacute;c nước xanh l&aacute; c&acirc;y&rdquo; để t&aacute;i mở cửa trong khu vực&hellip;</p>\r\n', '<p>S&aacute;ng 9/9, trong khu&ocirc;n khổ chương tr&igrave;nh Đại hội đồng Li&ecirc;n nghị viện ASEAN (AIPA) 41, UB Kinh tế AIPA c&oacute; phi&ecirc;n thảo luận về vai tr&ograve; của Nghị viện trong việc th&uacute;c đẩy gắn kết v&agrave; phục hồi kinh tế ASEAN sau đại dịch Covid-19.</p>\r\n\r\n<p>L&agrave; Trưởng đo&agrave;n Việt Nam tham gia phi&ecirc;n thảo luận, Ph&oacute; Chủ tịch Quốc hội Ph&ugrave;ng Quốc Hiển nhận định, đ&acirc;y l&agrave; chủ đề mang t&iacute;nh thiết thực, c&oacute; t&iacute;nh thời sự cấp b&aacute;ch đối với mọi quốc gia th&agrave;nh vi&ecirc;n AIPA hiện nay. Trong bối cảnh khu vực v&agrave; quốc tế bị ảnh hưởng nặng nề bởi dịch bệnh Covid-19 như hiện nay, Ph&oacute; Chủ tịch Quốc hội b&agrave;y tỏ mong muốn c&aacute;c nước th&agrave;nh vi&ecirc;n sớm vượt qua kh&oacute; khăn, phục hồi nền kinh tế, ổn định đời sống x&atilde; hội v&agrave; &ldquo;kh&ocirc;ng để ai bị bỏ lại ph&iacute;a sau&rdquo;.</p>\r\n\r\n<p><img alt=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 1\" src=\"https://icdn.dantri.com.vn/thumb_w/640/2020/09/09/ub-kinh-te-3-1599635216487.jpg\" title=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 1\" /></p>\r\n\r\n<p>Nhấn để ph&oacute;ng to ảnh</p>\r\n\r\n<p>Phi&ecirc;n họp của UB Kinh tế AIPA 41 diễn ra cuối buổi s&aacute;ng ng&agrave;y 9/9/2020.</p>\r\n\r\n<p><strong>Mở cửa lại bi&ecirc;n giới, di chuyển an to&agrave;n trong ASEAN</strong></p>\r\n\r\n<p>Tham gia thảo luận, đại diện của đo&agrave;n Việt Nam n&ecirc;u r&otilde;, đại dịch Covid-19 kh&ocirc;ng chỉ l&agrave; một cuộc khủng hoảng y tế đơn thuần, m&agrave; c&ograve;n l&agrave; một cuộc khủng hoảng đối với sự ph&aacute;t triển khi c&aacute;c chuỗi cung ứng v&agrave; thương mại quốc tế bị ph&aacute; vỡ.</p>\r\n\r\n<p>Theo đ&aacute;nh gi&aacute; của Ng&acirc;n h&agrave;ng Ph&aacute;t triển ch&acirc;u &Aacute; (ADB), dự b&aacute;o tăng trưởng tổng sản phẩm quốc nội (GDP) của khu vực Đ&ocirc;ng Nam &Aacute; sẽ giảm từ 4,4% năm 2019 xuống c&ograve;n -2,7% trong năm 2020, trước khi phục hồi l&ecirc;n mức 5,2% v&agrave;o năm 2021, đặc biệt do c&aacute;c mối quan hệ thương mại v&agrave; đầu tư mạnh mẽ của khu vực n&agrave;y với Trung Quốc.</p>\r\n\r\n<p>Quan ngại s&acirc;u sắc về những tổn thất to lớn do dịch bệnh Covid-19 g&acirc;y ra ở c&aacute;c quốc gia ASEAN, trong tư c&aacute;ch chủ nh&agrave;, đo&agrave;n Việt Nam mong muốn cộng đồng ASEAN thống nhất thực hiện một chuỗi giải ph&aacute;p mang t&iacute;nh đột ph&aacute;, khả thi.</p>\r\n\r\n<p>Một l&agrave;, thực hiện th&uacute;c đẩy nhanh việc trao đổi th&ocirc;ng tin li&ecirc;n quan đến du lịch v&agrave; sức khỏe v&agrave; c&aacute;c biện ph&aacute;p cần thiết kh&aacute;c để kiểm so&aacute;t sự l&acirc;y lan của đại dịch Covid-19; củng cố sự an t&acirc;m trong di chuyển, &aacute;p dụng c&aacute;c ti&ecirc;u chuẩn an to&agrave;n v&agrave; quy tr&igrave;nh y tế hỗ trợ di chuyển xuy&ecirc;n bi&ecirc;n giới của c&ocirc;ng d&acirc;n ASEAN kh&ocirc;ng bị gi&aacute;n đoạn, đồng thời tu&acirc;n thủ c&aacute;c ti&ecirc;u chuẩn an to&agrave;n v&agrave; y tế quốc tế cũng như c&aacute;c cam kết theo c&aacute;c Hiệp định c&oacute; li&ecirc;n quan giữa c&aacute;c nước th&agrave;nh vi&ecirc;n ASEAN.</p>\r\n\r\n<p><img alt=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 2\" src=\"https://icdn.dantri.com.vn/thumb_w/640/2020/09/09/ub-kinh-te-2-1599635215859.jpg\" title=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 2\" /></p>\r\n\r\n<p>Nhấn để ph&oacute;ng to ảnh</p>\r\n\r\n<p>Ph&oacute; Chủ tịch Quốc hội Việt Nam Ph&ugrave;ng Quốc Hiển tham gia phi&ecirc;n thảo luận.</p>\r\n\r\n<p>Hai l&agrave;, nghi&ecirc;n cứu kh&aacute;i niệm &ldquo;du lịch cầu h&agrave;ng kh&ocirc;ng&rdquo; giữa &ldquo;c&aacute;c nước xanh l&aacute; c&acirc;y&rdquo; như một s&aacute;ng kiến sơ bộ trong qu&aacute; tr&igrave;nh mở cửa lại bi&ecirc;n giới, h&igrave;nh th&agrave;nh c&aacute;c khu vực di chuyển an to&agrave;n trong ASEAN v&agrave; đề xuất hướng dẫn tham chiếu cho tất cả c&aacute;c nước th&agrave;nh vi&ecirc;n ASEAN m&agrave; kh&ocirc;ng l&agrave;m tổn hại đến những cam kết theo c&aacute;c thỏa thuận c&oacute; li&ecirc;n quan giữa c&aacute;c nước th&agrave;nh vi&ecirc;n ASEAN.</p>\r\n\r\n<p>Ba l&agrave;, tiếp tục r&agrave; so&aacute;t v&agrave; ho&agrave;n thiện khu&ocirc;n khổ ph&aacute;p l&yacute; nhằm th&uacute;c đẩy thuận lợi h&oacute;a thương mại, bảo đảm lưu th&ocirc;ng h&agrave;ng h&oacute;a v&agrave; c&aacute;c chuỗi cung ứng trong khu vực kh&ocirc;ng bị gi&aacute;n đoạn; x&acirc;y dựng ch&iacute;nh s&aacute;ch đầu tư th&ocirc;ng tho&aacute;ng, bền vững, c&oacute; tr&aacute;ch nhiệm trong khu vực; bảo đảm an ninh lương thực v&agrave; chuỗi gi&aacute; trị n&ocirc;ng nghiệp; tăng cường sử dụng năng lượng t&aacute;i tạo; tiến tới x&acirc;y dựng kinh tế tuần ho&agrave;n.</p>\r\n\r\n<p>Bốn l&agrave;, th&uacute;c đẩy nhanh việc ph&ecirc; chuẩn c&aacute;c hiệp định, thỏa thuận thương mại trong khu vực; ưu ti&ecirc;n tăng cường c&aacute;c nỗ lực để ho&agrave;n tất đ&agrave;m ph&aacute;n v&agrave; k&yacute; kết Hiệp định Đối t&aacute;c Kinh tế To&agrave;n diện Khu vực (RCEP) trong năm 2020; tăng cường năng lực, sự tham gia v&agrave; đẩy mạnh gi&aacute;m s&aacute;t nghị viện đối với việc thực hiện c&aacute;c cam kết về đầu tư v&agrave; thương mại trong khu&ocirc;n khổ khu vực v&agrave; quốc tế, coi đ&acirc;y l&agrave; c&ocirc;ng cụ chủ yếu để th&uacute;c đẩy li&ecirc;n kết kinh tế s&acirc;u rộng hơn trong Cộng đồng ASEAN v&agrave; giữa ASEAN với c&aacute;c đối t&aacute;c kh&aacute;c.</p>\r\n\r\n<p><strong>Khai th&aacute;c t&agrave;i nguy&ecirc;n xuy&ecirc;n bi&ecirc;n giới để đảm bảo an ninh lương thực&nbsp;</strong></p>\r\n\r\n<p>Năm l&agrave;, tăng cường ph&aacute;t triển cơ sở hạ tầng số, kết nối số, an to&agrave;n dữ liệu số, kiến thức v&agrave; kỹ năng số gắn kết giữa c&aacute;c nước th&agrave;nh vi&ecirc;n ASEAN để ph&aacute;t triển kinh tế số; chia sẻ th&ocirc;ng tin v&agrave; kinh nghiệm để xử l&yacute; c&aacute;c th&aacute;ch thức m&agrave; c&aacute;c nền tảng thương mại điện tử đang phải đối mặt; tận dụng c&aacute;c cơ hội của C&aacute;ch mạng c&ocirc;ng nghiệp lần thứ tư nhằm khắc phục bất lợi từ việc đ&oacute;ng cửa nền kinh tế v&agrave; gi&atilde;n c&aacute;ch x&atilde; hội trong dịch bệnh Covid-19 v&agrave; duy tr&igrave; t&iacute;nh cạnh tranh trong kỷ nguy&ecirc;n kinh tế số.</p>\r\n\r\n<p>S&aacute;u l&agrave;, x&acirc;y dựng cơ sở hạ tầng kết nối khu vực, tăng cường kết nối giao th&ocirc;ng v&agrave; sự cần thiết của việc tăng cường hợp t&aacute;c tiểu v&ugrave;ng M&ecirc; C&ocirc;ng v&agrave; c&aacute;c tiểu v&ugrave;ng kh&aacute;c của ASEAN, đặc biệt l&agrave; về bảo vệ m&ocirc;i trường, ph&aacute;t triển n&ocirc;ng nghiệp th&ocirc;ng minh v&agrave; quản l&yacute; bền vững c&aacute;c nguồn t&agrave;i nguy&ecirc;n thi&ecirc;n nhi&ecirc;n xuy&ecirc;n bi&ecirc;n giới nhằm đảm bảo an ninh lương thực, nguồn nước v&agrave; năng lượng tại c&aacute;c tiểu v&ugrave;ng trong v&agrave; sau đại dịch Covid-19.</p>\r\n\r\n<p><img alt=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 3\" src=\"https://icdn.dantri.com.vn/thumb_w/640/2020/09/09/ub-kinh-te-5-1599635216200.jpg\" title=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 3\" /></p>\r\n\r\n<p>Nhấn để ph&oacute;ng to ảnh</p>\r\n\r\n<p>Phi&ecirc;n thảo luận diễn ra đồng thời tại điểm cầu của c&aacute;c nước trong cộng đồng ASEAN.</p>\r\n\r\n<p>Ph&aacute;t biểu tại phi&ecirc;n họp, đại diện đo&agrave;n Malaysia cho rằng, c&aacute;c nước trong ASEAN c&oacute; nhiều điểm chung n&ecirc;n ch&iacute;nh s&aacute;ch của bất cứ quốc gia n&agrave;o cũng c&oacute; thể được c&aacute;c quốc gia kh&aacute;c học tập, để c&oacute; thể tr&aacute;nh gặp sai lầm giống nhau.</p>\r\n\r\n<p>Theo nghị sỹ Malaysia, thời điểm n&agrave;y rất cần một c&aacute;ch tiếp cận chung theo hướng địa phương ho&aacute; c&aacute;c hoạt động kinh tế. Hầu hết hoạt động kinh tế đ&atilde; được t&iacute;ch hợp v&agrave;o chuối cũng ứng to&agrave;n cầu nhưng Covid- 19 đ&atilde; l&agrave;m gi&aacute;n đoạn chuỗi cung ứng n&agrave;y.</p>\r\n\r\n<p>B&agrave;i học l&agrave; cần phải giảm thiểu sự to&agrave;n cầu ho&aacute;. Nhiều doanh nghiệp đang địa phương ho&aacute; chuỗi sản xuất của m&igrave;n, ASEAN c&oacute; thể địa phương ho&aacute;, mở rộng sang khu vực ho&aacute;, xử l&yacute; chuỗi cung ứng khu vực để miễn dịch khủng hoảng trong tương lai, đại diện đo&agrave;n nghị sĩ Malaysia n&ecirc;u quan điểm.</p>\r\n\r\n<p>Chia sẻ kinh nghiệm ứng ph&oacute; với đại dịch Covid-19, đại diện Singapore cho biết nước n&agrave;y mở ra 4 loại ng&acirc;n s&aacute;ch, gồm quỹ ki&ecirc;n cường, quỹ chống chịu, quỹ đo&agrave;n kết v&agrave; quỹ thống&nbsp; nhất, bốn quỹ n&agrave;y được Ch&iacute;nh phủ hỗ trợ. B&ecirc;n cạnh đ&oacute; Singapore c&ograve;n c&oacute; ch&iacute;nh s&aacute;ch hỗ trợ để doanh nghiệp giữ việc l&agrave;m cho người lao động, ch&iacute;nh s&aacute;ch nay được gia hạn đến th&aacute;ng 3/2011.</p>\r\n\r\n<p><strong>Th&aacute;i Anh</strong></p>\r\n', 0, '1615813320_132218025263764024_5.jpg', 10000000, 20, 4);
 INSERT INTO `products` (`id`, `name`, `description`, `content`, `hot`, `photo`, `price`, `discount`, `category_id`) VALUES
 (11, '9 - MacBook Pro 16 Touch Bar 2.6GHz Core i7/16GB/', '<p>Khắc phục hậu quả của đại dịch Covid-19, một s&aacute;ng kiến được đưa ra giữa c&aacute;c nước ASEAN l&agrave; tổ chức &ldquo;du lịch cầu h&agrave;ng kh&ocirc;ng&rdquo; giữa &ldquo;c&aacute;c nước xanh l&aacute; c&acirc;y&rdquo; để t&aacute;i mở cửa trong khu vực&hellip;</p>\r\n', '<p>S&aacute;ng 9/9, trong khu&ocirc;n khổ chương tr&igrave;nh Đại hội đồng Li&ecirc;n nghị viện ASEAN (AIPA) 41, UB Kinh tế AIPA c&oacute; phi&ecirc;n thảo luận về vai tr&ograve; của Nghị viện trong việc th&uacute;c đẩy gắn kết v&agrave; phục hồi kinh tế ASEAN sau đại dịch Covid-19.</p>\r\n\r\n<p>L&agrave; Trưởng đo&agrave;n Việt Nam tham gia phi&ecirc;n thảo luận, Ph&oacute; Chủ tịch Quốc hội Ph&ugrave;ng Quốc Hiển nhận định, đ&acirc;y l&agrave; chủ đề mang t&iacute;nh thiết thực, c&oacute; t&iacute;nh thời sự cấp b&aacute;ch đối với mọi quốc gia th&agrave;nh vi&ecirc;n AIPA hiện nay. Trong bối cảnh khu vực v&agrave; quốc tế bị ảnh hưởng nặng nề bởi dịch bệnh Covid-19 như hiện nay, Ph&oacute; Chủ tịch Quốc hội b&agrave;y tỏ mong muốn c&aacute;c nước th&agrave;nh vi&ecirc;n sớm vượt qua kh&oacute; khăn, phục hồi nền kinh tế, ổn định đời sống x&atilde; hội v&agrave; &ldquo;kh&ocirc;ng để ai bị bỏ lại ph&iacute;a sau&rdquo;.</p>\r\n\r\n<p><img alt=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 1\" src=\"https://icdn.dantri.com.vn/thumb_w/640/2020/09/09/ub-kinh-te-3-1599635216487.jpg\" title=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 1\" /></p>\r\n\r\n<p>Nhấn để ph&oacute;ng to ảnh</p>\r\n\r\n<p>Phi&ecirc;n họp của UB Kinh tế AIPA 41 diễn ra cuối buổi s&aacute;ng ng&agrave;y 9/9/2020.</p>\r\n\r\n<p><strong>Mở cửa lại bi&ecirc;n giới, di chuyển an to&agrave;n trong ASEAN</strong></p>\r\n\r\n<p>Tham gia thảo luận, đại diện của đo&agrave;n Việt Nam n&ecirc;u r&otilde;, đại dịch Covid-19 kh&ocirc;ng chỉ l&agrave; một cuộc khủng hoảng y tế đơn thuần, m&agrave; c&ograve;n l&agrave; một cuộc khủng hoảng đối với sự ph&aacute;t triển khi c&aacute;c chuỗi cung ứng v&agrave; thương mại quốc tế bị ph&aacute; vỡ.</p>\r\n\r\n<p>Theo đ&aacute;nh gi&aacute; của Ng&acirc;n h&agrave;ng Ph&aacute;t triển ch&acirc;u &Aacute; (ADB), dự b&aacute;o tăng trưởng tổng sản phẩm quốc nội (GDP) của khu vực Đ&ocirc;ng Nam &Aacute; sẽ giảm từ 4,4% năm 2019 xuống c&ograve;n -2,7% trong năm 2020, trước khi phục hồi l&ecirc;n mức 5,2% v&agrave;o năm 2021, đặc biệt do c&aacute;c mối quan hệ thương mại v&agrave; đầu tư mạnh mẽ của khu vực n&agrave;y với Trung Quốc.</p>\r\n\r\n<p>Quan ngại s&acirc;u sắc về những tổn thất to lớn do dịch bệnh Covid-19 g&acirc;y ra ở c&aacute;c quốc gia ASEAN, trong tư c&aacute;ch chủ nh&agrave;, đo&agrave;n Việt Nam mong muốn cộng đồng ASEAN thống nhất thực hiện một chuỗi giải ph&aacute;p mang t&iacute;nh đột ph&aacute;, khả thi.</p>\r\n\r\n<p>Một l&agrave;, thực hiện th&uacute;c đẩy nhanh việc trao đổi th&ocirc;ng tin li&ecirc;n quan đến du lịch v&agrave; sức khỏe v&agrave; c&aacute;c biện ph&aacute;p cần thiết kh&aacute;c để kiểm so&aacute;t sự l&acirc;y lan của đại dịch Covid-19; củng cố sự an t&acirc;m trong di chuyển, &aacute;p dụng c&aacute;c ti&ecirc;u chuẩn an to&agrave;n v&agrave; quy tr&igrave;nh y tế hỗ trợ di chuyển xuy&ecirc;n bi&ecirc;n giới của c&ocirc;ng d&acirc;n ASEAN kh&ocirc;ng bị gi&aacute;n đoạn, đồng thời tu&acirc;n thủ c&aacute;c ti&ecirc;u chuẩn an to&agrave;n v&agrave; y tế quốc tế cũng như c&aacute;c cam kết theo c&aacute;c Hiệp định c&oacute; li&ecirc;n quan giữa c&aacute;c nước th&agrave;nh vi&ecirc;n ASEAN.</p>\r\n\r\n<p><img alt=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 2\" src=\"https://icdn.dantri.com.vn/thumb_w/640/2020/09/09/ub-kinh-te-2-1599635215859.jpg\" title=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 2\" /></p>\r\n\r\n<p>Nhấn để ph&oacute;ng to ảnh</p>\r\n\r\n<p>Ph&oacute; Chủ tịch Quốc hội Việt Nam Ph&ugrave;ng Quốc Hiển tham gia phi&ecirc;n thảo luận.</p>\r\n\r\n<p>Hai l&agrave;, nghi&ecirc;n cứu kh&aacute;i niệm &ldquo;du lịch cầu h&agrave;ng kh&ocirc;ng&rdquo; giữa &ldquo;c&aacute;c nước xanh l&aacute; c&acirc;y&rdquo; như một s&aacute;ng kiến sơ bộ trong qu&aacute; tr&igrave;nh mở cửa lại bi&ecirc;n giới, h&igrave;nh th&agrave;nh c&aacute;c khu vực di chuyển an to&agrave;n trong ASEAN v&agrave; đề xuất hướng dẫn tham chiếu cho tất cả c&aacute;c nước th&agrave;nh vi&ecirc;n ASEAN m&agrave; kh&ocirc;ng l&agrave;m tổn hại đến những cam kết theo c&aacute;c thỏa thuận c&oacute; li&ecirc;n quan giữa c&aacute;c nước th&agrave;nh vi&ecirc;n ASEAN.</p>\r\n\r\n<p>Ba l&agrave;, tiếp tục r&agrave; so&aacute;t v&agrave; ho&agrave;n thiện khu&ocirc;n khổ ph&aacute;p l&yacute; nhằm th&uacute;c đẩy thuận lợi h&oacute;a thương mại, bảo đảm lưu th&ocirc;ng h&agrave;ng h&oacute;a v&agrave; c&aacute;c chuỗi cung ứng trong khu vực kh&ocirc;ng bị gi&aacute;n đoạn; x&acirc;y dựng ch&iacute;nh s&aacute;ch đầu tư th&ocirc;ng tho&aacute;ng, bền vững, c&oacute; tr&aacute;ch nhiệm trong khu vực; bảo đảm an ninh lương thực v&agrave; chuỗi gi&aacute; trị n&ocirc;ng nghiệp; tăng cường sử dụng năng lượng t&aacute;i tạo; tiến tới x&acirc;y dựng kinh tế tuần ho&agrave;n.</p>\r\n\r\n<p>Bốn l&agrave;, th&uacute;c đẩy nhanh việc ph&ecirc; chuẩn c&aacute;c hiệp định, thỏa thuận thương mại trong khu vực; ưu ti&ecirc;n tăng cường c&aacute;c nỗ lực để ho&agrave;n tất đ&agrave;m ph&aacute;n v&agrave; k&yacute; kết Hiệp định Đối t&aacute;c Kinh tế To&agrave;n diện Khu vực (RCEP) trong năm 2020; tăng cường năng lực, sự tham gia v&agrave; đẩy mạnh gi&aacute;m s&aacute;t nghị viện đối với việc thực hiện c&aacute;c cam kết về đầu tư v&agrave; thương mại trong khu&ocirc;n khổ khu vực v&agrave; quốc tế, coi đ&acirc;y l&agrave; c&ocirc;ng cụ chủ yếu để th&uacute;c đẩy li&ecirc;n kết kinh tế s&acirc;u rộng hơn trong Cộng đồng ASEAN v&agrave; giữa ASEAN với c&aacute;c đối t&aacute;c kh&aacute;c.</p>\r\n\r\n<p><strong>Khai th&aacute;c t&agrave;i nguy&ecirc;n xuy&ecirc;n bi&ecirc;n giới để đảm bảo an ninh lương thực&nbsp;</strong></p>\r\n\r\n<p>Năm l&agrave;, tăng cường ph&aacute;t triển cơ sở hạ tầng số, kết nối số, an to&agrave;n dữ liệu số, kiến thức v&agrave; kỹ năng số gắn kết giữa c&aacute;c nước th&agrave;nh vi&ecirc;n ASEAN để ph&aacute;t triển kinh tế số; chia sẻ th&ocirc;ng tin v&agrave; kinh nghiệm để xử l&yacute; c&aacute;c th&aacute;ch thức m&agrave; c&aacute;c nền tảng thương mại điện tử đang phải đối mặt; tận dụng c&aacute;c cơ hội của C&aacute;ch mạng c&ocirc;ng nghiệp lần thứ tư nhằm khắc phục bất lợi từ việc đ&oacute;ng cửa nền kinh tế v&agrave; gi&atilde;n c&aacute;ch x&atilde; hội trong dịch bệnh Covid-19 v&agrave; duy tr&igrave; t&iacute;nh cạnh tranh trong kỷ nguy&ecirc;n kinh tế số.</p>\r\n\r\n<p>S&aacute;u l&agrave;, x&acirc;y dựng cơ sở hạ tầng kết nối khu vực, tăng cường kết nối giao th&ocirc;ng v&agrave; sự cần thiết của việc tăng cường hợp t&aacute;c tiểu v&ugrave;ng M&ecirc; C&ocirc;ng v&agrave; c&aacute;c tiểu v&ugrave;ng kh&aacute;c của ASEAN, đặc biệt l&agrave; về bảo vệ m&ocirc;i trường, ph&aacute;t triển n&ocirc;ng nghiệp th&ocirc;ng minh v&agrave; quản l&yacute; bền vững c&aacute;c nguồn t&agrave;i nguy&ecirc;n thi&ecirc;n nhi&ecirc;n xuy&ecirc;n bi&ecirc;n giới nhằm đảm bảo an ninh lương thực, nguồn nước v&agrave; năng lượng tại c&aacute;c tiểu v&ugrave;ng trong v&agrave; sau đại dịch Covid-19.</p>\r\n\r\n<p><img alt=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 3\" src=\"https://icdn.dantri.com.vn/thumb_w/640/2020/09/09/ub-kinh-te-5-1599635216200.jpg\" title=\"Du lịch cầu hàng không giữa “các nước xanh lá cây” để tái mở cửa ASEAN - 3\" /></p>\r\n\r\n<p>Nhấn để ph&oacute;ng to ảnh</p>\r\n\r\n<p>Phi&ecirc;n thảo luận diễn ra đồng thời tại điểm cầu của c&aacute;c nước trong cộng đồng ASEAN.</p>\r\n\r\n<p>Ph&aacute;t biểu tại phi&ecirc;n họp, đại diện đo&agrave;n Malaysia cho rằng, c&aacute;c nước trong ASEAN c&oacute; nhiều điểm chung n&ecirc;n ch&iacute;nh s&aacute;ch của bất cứ quốc gia n&agrave;o cũng c&oacute; thể được c&aacute;c quốc gia kh&aacute;c học tập, để c&oacute; thể tr&aacute;nh gặp sai lầm giống nhau.</p>\r\n\r\n<p>Theo nghị sỹ Malaysia, thời điểm n&agrave;y rất cần một c&aacute;ch tiếp cận chung theo hướng địa phương ho&aacute; c&aacute;c hoạt động kinh tế. Hầu hết hoạt động kinh tế đ&atilde; được t&iacute;ch hợp v&agrave;o chuối cũng ứng to&agrave;n cầu nhưng Covid- 19 đ&atilde; l&agrave;m gi&aacute;n đoạn chuỗi cung ứng n&agrave;y.</p>\r\n\r\n<p>B&agrave;i học l&agrave; cần phải giảm thiểu sự to&agrave;n cầu ho&aacute;. Nhiều doanh nghiệp đang địa phương ho&aacute; chuỗi sản xuất của m&igrave;n, ASEAN c&oacute; thể địa phương ho&aacute;, mở rộng sang khu vực ho&aacute;, xử l&yacute; chuỗi cung ứng khu vực để miễn dịch khủng hoảng trong tương lai, đại diện đo&agrave;n nghị sĩ Malaysia n&ecirc;u quan điểm.</p>\r\n\r\n<p>Chia sẻ kinh nghiệm ứng ph&oacute; với đại dịch Covid-19, đại diện Singapore cho biết nước n&agrave;y mở ra 4 loại ng&acirc;n s&aacute;ch, gồm quỹ ki&ecirc;n cường, quỹ chống chịu, quỹ đo&agrave;n kết v&agrave; quỹ thống&nbsp; nhất, bốn quỹ n&agrave;y được Ch&iacute;nh phủ hỗ trợ. B&ecirc;n cạnh đ&oacute; Singapore c&ograve;n c&oacute; ch&iacute;nh s&aacute;ch hỗ trợ để doanh nghiệp giữ việc l&agrave;m cho người lao động, ch&iacute;nh s&aacute;ch nay được gia hạn đến th&aacute;ng 3/2011.</p>\r\n\r\n<p><strong>Th&aacute;i Anh</strong></p>\r\n', 1, '1615813286_132218024222456931_2.jpg', 5000000, 20, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `spend`
+--
+
+CREATE TABLE `spend` (
+  `id` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  `price` int(11) NOT NULL,
+  `reason` varchar(255) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `spend`
+--
+
+INSERT INTO `spend` (`id`, `title`, `description`, `price`, `reason`, `date`) VALUES
+(1, 'Mua hànge', '<p>Mua product 1e</p>\r\n', 1000000, 'còn hàng', '2021-08-23'),
+(2, 'crea', '<p>cread</p>\r\n', 12222222, 'còn hàng', '2021-08-26'),
+(3, 'spen2', '<p>adfdf</p>\r\n', 1111111, 'còn hàng', '2021-08-28');
 
 -- --------------------------------------------------------
 
@@ -112,9 +163,21 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `inventory`
+--
+ALTER TABLE `inventory`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `spend`
+--
+ALTER TABLE `spend`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -134,10 +197,22 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT cho bảng `inventory`
+--
+ALTER TABLE `inventory`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT cho bảng `spend`
+--
+ALTER TABLE `spend`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
