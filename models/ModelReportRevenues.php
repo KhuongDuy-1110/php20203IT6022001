@@ -64,7 +64,7 @@
             if(isset($_GET["date"]) ){
                 $date = $_GET["date"];
                 $conn = Connection::getInstance();
-                $query = $conn->query("select * from orderdetail where create_at =  '".$date."';");
+                $query = $conn->query("select * from orders where date =  '".$date."';");
                 //Tạo biến mảng static để sử dụng cho hàm dưới
                 $GLOBALS["billQuery"] = $query->fetchAll();
                 //Trả về số lượng hóa đơn
@@ -76,19 +76,22 @@
         //Hàm đếm số lượng khách hàng trong ngày 
         public function countCustomerPerDay(){
             $count = 0;
-            $arrBill = array();
+
+            $arrBill = array(-1);
             foreach($GLOBALS["billQuery"] as $item){
                 //Lặp tìm tên khách hàng trùng
                 $check = true;
                 for($i = 0 ; $i < count($arrBill) ; $i++){
-                    if($item->fullname == $arrBill[$i]){
+                    // echo $item->customer_id;
+                    // die();
+                    if($item->customer_id == (int)$arrBill[$i]){
                         $check = false;
                     }
                 }
                 //Nếu tên chưa có trong mảng thì thêm vào mảng
                 if($check){
                     $count++;
-                    $arrBill[$count] = $item->fullname;
+                    $arrBill[$count] = $item->customer_id;
                 }
             }
             //Kết thúc vòng lặp trả về số lượng khách hàng 
@@ -99,7 +102,7 @@
         public function totalRevenue(){ 
             $total = 0;
             foreach($GLOBALS["billQuery"] as $item){
-                $total = $total + (float)$item->total;
+                $total = $total + (float)$item->price;
             }
             return $total;
         }
