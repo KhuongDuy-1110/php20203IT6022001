@@ -4,10 +4,10 @@
 ?>
 <div class="col-md-12">
     <div style="margin-bottom:5px;">
-        <a href="index.php?controller=categories&action=create" class="btn btn-primary">Add categories</a>
+        <a href="index.php?controller=categories&action=create" class="btn btn-primary" style="background-color: #152555;">Add categories</a>
     </div>
     <div class="panel panel-primary">
-        <div class="panel-heading">List categories</div>
+        <div class="panel-heading" style="background-color: #152555;">List categories</div>
         <div class="panel-body">
             <table class="table table-bordered table-hover">
                 <tr>

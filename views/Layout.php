@@ -26,14 +26,14 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="index2.html" class="logo" style="background-color: #222d32">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><b>N</b>15</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b> - phoxinh</span>
+            <span class="logo-lg" ><b>Admin</b> - PhoXinh</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
+        <nav class="navbar navbar-static-top" style="background-color: #152555;">
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                 <span class="sr-only">Toggle navigation</span>
@@ -45,7 +45,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="assets/admin/layout1/images/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Your name</span>
+                            <span class="hidden-xs">Welcome</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -88,7 +88,7 @@
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">ADMIN</li>
+                <li class="header" style="background-color: #ffffff; color: black;">ADMIN</li>
 
                 <li>
                     <a href="index.php?controller=categories">

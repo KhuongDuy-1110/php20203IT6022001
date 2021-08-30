@@ -2,7 +2,7 @@
 <?php $this->fileLayout = "Layout.php"; ?>
 <div class="col-md-12">    
     <div class="panel panel-primary">
-        <div class="panel-heading">List Orders</div>
+        <div class="panel-heading" style="background-color: #152555;">List Orders</div>
         <div class="panel-body">
             <table class="table table-bordered table-hover">
                 <tr>
