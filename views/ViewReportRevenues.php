@@ -32,7 +32,7 @@
                         <?php echo $rows->total; ?>
                     </td>
                     <td style="text-align:center;">
-                        <a href="index.php?controller=report_revenues&action=delete&id=<?php echo $rows->id; ?>" onclick="return window.confirm('Are you sure?');">Delete</a>
+                        <a href="index.php?controller=reportRevenues&action=delete&id=<?php echo $rows->id; ?>" onclick="return window.confirm('Are you sure?');">Delete</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
